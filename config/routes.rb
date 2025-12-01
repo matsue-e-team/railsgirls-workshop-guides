@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   get 'pages/about'
-  root to: redirect("/ideas")
+  root "pages#homepage"
   resources :ideas
   # root "hello#index"
 end
