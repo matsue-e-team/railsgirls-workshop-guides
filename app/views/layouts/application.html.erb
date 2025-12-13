@@ -15,7 +15,7 @@
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
       <div class="container-fluid">
-        <a class="navbar-brand" href="/">The idea app</a>
+        <a class="navbar-brand" href="/">Kanko</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -25,11 +25,12 @@
               <a class="nav-link <%= 'active' if current_page?(controller: 'pages', action: 'homepage') %>" href="/">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link <%= 'active' if current_page?(controller: 'pages', action: 'map') %>" href="/pages/map">map</a>
+              <a class="nav-link <%= 'active' if current_page?(controller: 'pages', action: 'information') %>" href="/pages/information">Information</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link <%= 'active' if current_page?(controller: 'ideas') %>" href="/ideas">Ideas</a>
+              <a class="nav-link <%= 'active' if current_page?(controller: 'pages', action: 'map') %>" href="/pages/map">Map</a>
             </li>
+
             <li class="nav-item">
               <a class="nav-link <%= 'active' if current_page?(controller: 'pages', action: 'about') %>" href="/pages/about">About</a>
             </li>
