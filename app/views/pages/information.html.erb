@@ -1,0 +1,121 @@
+<style>
+/* シンプルなタブ（JS不要） */
+.tabs{max-width:900px;margin:0 auto;padding:1rem}
+.tab-labels{display:flex;gap:0.25rem;flex-wrap:wrap}
+.tab-labels label{background:#f3f4f6;padding:0.6rem 1rem;border-radius:6px;cursor:pointer;border:1px solid #e5e7eb}
+.tab-labels label:hover{background:#eef2ff}
+.tabs input{display:none}
+.tab-panels{margin-top:1rem;border:1px solid #e5e7eb;padding:1rem;border-radius:6px;background:#fff}
+.panel{display:none}
+.tab-input:checked ~ .tab-panels .panel{display:none}
+#tab1:checked ~ .tab-panels #panel1,
+#tab2:checked ~ .tab-panels #panel2,
+#tab3:checked ~ .tab-panels #panel3,
+#tab4:checked ~ .tab-panels #panel4,
+#tab5:checked ~ .tab-panels #panel5,
+#tab6:checked ~ .tab-panels #panel6,
+#tab7:checked ~ .tab-panels #panel7,
+#tab8:checked ~ .tab-panels #panel8{display:block}
+.tab-labels label.active{background:#fff;border-bottom:2px solid #3b82f6}
+/* ラベルのアクティブ見た目（フォールバック） */
+#tab1:checked ~ .tab-labels label[for="tab1"],
+#tab2:checked ~ .tab-labels label[for="tab2"],
+#tab3:checked ~ .tab-labels label[for="tab3"],
+#tab4:checked ~ .tab-labels label[for="tab4"],
+#tab5:checked ~ .tab-labels label[for="tab5"],
+#tab6:checked ~ .tab-labels label[for="tab6"],
+#tab7:checked ~ .tab-labels label[for="tab7"],
+#tab8:checked ~ .tab-labels label[for="tab8"]{background:#fff;border-bottom:2px solid #3b82f6}
+
+.panel h2{margin-top:0}
+.panel p{margin-bottom:0.5rem}
+.meta{color:#6b7280;font-size:0.9rem}
+.panel-img{width:100%;height:auto;border-radius:6px;margin-bottom:0.6rem;object-fit:cover}
+
+@media (max-width:600px){.tab-labels label{flex:1 1 100%;text-align:center}}
+</style>
+
+<h1>松江市の観光名所</h1>
+
+<div class="tabs">
+	<input id="tab1" type="radio" name="tabs" checked>
+	<input id="tab2" type="radio" name="tabs">
+	<input id="tab3" type="radio" name="tabs">
+	<input id="tab4" type="radio" name="tabs">
+	<input id="tab5" type="radio" name="tabs">
+	<input id="tab6" type="radio" name="tabs">
+	<input id="tab7" type="radio" name="tabs">
+	<input id="tab8" type="radio" name="tabs">
+
+	<div class="tab-labels">
+		<label for="tab1">松江城</label>
+		<label for="tab2">堀川遊覧船</label>
+		<label for="tab3">小泉八雲記念館</label>
+		<label for="tab4">宍道湖の夕日</label>
+		<label for="tab5">武家屋敷</label>
+		<label for="tab6">島根県立美術館</label>
+		<label for="tab7">松江歴史館</label>
+		<label for="tab8">八重垣神社</label>
+	</div>
+
+	<div class="tab-panels">
+		<div class="panel" id="panel1">
+			<img class="panel-img" src="松江城2.jpg" alt="松江城">
+			<h2>松江城</h2>
+			<p class="meta">所在地: 松江市中心部</p>
+			<p>国宝に指定されている天守が残る城。石垣や堀を巡り、天守からは松江市街や宍道湖が一望できます。桜や紅葉の季節は特に美しいです。</p>
+		</div>
+
+		<div class="panel" id="panel2">
+			<img class="panel-img" src="https://source.unsplash.com/800x400/?canal,boat" alt="堀川遊覧船">
+			<h2>堀川遊覧船</h2>
+			<p class="meta">発着: 松江城周辺</p>
+			<p>城下町の堀をゆっくり進む遊覧船。橋や古い町並みを低い位置から眺められ、ガイドの解説で松江の歴史を学べます。</p>
+		</div>
+
+		<div class="panel" id="panel3">
+			<img class="panel-img" src="https://source.unsplash.com/800x400/?museum,author" alt="小泉八雲記念館">
+			<h2>小泉八雲記念館</h2>
+			<p class="meta">所在地: 松江市内</p>
+			<p>ラフカディオ・ハーン（小泉八雲）の生涯と作品を紹介する記念館。旧居や展示を通して松江と八雲の結びつきを知ることができます。</p>
+		</div>
+
+		<div class="panel" id="panel4">
+			<img class="panel-img" src="https://source.unsplash.com/800x400/?sunset,lake" alt="宍道湖の夕日">
+			<h2>宍道湖の夕日</h2>
+			<p class="meta">観賞場所: 宍道湖周辺の堤防や展望スポット</p>
+			<p>日本夕陽百選にも選ばれた美しい夕日。湖面に映る茜色のグラデーションは写真撮影にもおすすめです。風の強い日には波とともに刻々と変わる景色が楽しめます。</p>
+		</div>
+
+		<div class="panel" id="panel5">
+			<img class="panel-img" src="https://source.unsplash.com/800x400/?samurai,house" alt="武家屋敷">
+			<h2>武家屋敷</h2>
+			<p class="meta">所在地: 松江城近くの歴史地区</p>
+			<p>江戸時代の武家屋敷が残る通り。古い建物や塀、庭園を歩きながら当時の暮らしぶりに思いを馳せられます。落ち着いた雰囲気の散策に最適です。</p>
+		</div>
+
+		<div class="panel" id="panel6">
+			<img class="panel-img" src="https://source.unsplash.com/800x400/?art,museum" alt="島根県立美術館">
+			<h2>島根県立美術館</h2>
+			<p class="meta">所在地: 宍道湖沿い</p>
+			<p>宍道湖を望むロケーションに立つ美術館。地域ゆかりの作品や企画展が開かれ、建物や周辺散歩も楽しめます。</p>
+		</div>
+
+		<div class="panel" id="panel7">
+			<img class="panel-img" src="https://source.unsplash.com/800x400/?history,museum" alt="松江歴史館">
+			<h2>松江歴史館</h2>
+			<p class="meta">所在地: 城下町エリア</p>
+			<p>松江の歴史や文化を紹介する資料館。城下町の生活や祭り、産業などをわかりやすく展示しています。</p>
+		</div>
+
+		<div class="panel" id="panel8">
+			<img class="panel-img" src="https://source.unsplash.com/800x400/?shrine,torii" alt="八重垣神社">
+			<h2>八重垣神社</h2>
+			<p class="meta">所在地: 松江市内</p>
+			<p>縁結びで知られる神社。鳥居や祈願の風習、周辺の自然が落ち着いた雰囲気を作り出します。</p>
+		</div>
+	</div>
+</div>
+
+<p class="meta" style="max-width:900px;margin:0.75rem auto">他にも美術館や温泉、郷土料理を楽しめるお店がたくさんあります。詳しく載せたい場所があれば教えてください。</p>
+
