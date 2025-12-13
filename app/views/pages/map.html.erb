@@ -1,0 +1,11 @@
+<h1>Map</h1>
+<form action="/pages/map" method="get">
+  <input type="text" name="q" placeholder="名称または住所を入力してください">
+  <button type="submit">地図を表示</button>
+</form>
+
+<% if params[:q].present? %>
+  <iframe src="https://maps.google.com/maps?q=<%= URI.encode_www_form_component(params[:q]) %>&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<% else %>
+  <p>名称または住所を入力して地図を表示してください。</p>
+<% end %>
