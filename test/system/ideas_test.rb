@@ -7,17 +7,17 @@ class IdeasTest < ApplicationSystemTestCase
 
   test "visiting the index" do
     visit ideas_url
-    assert_selector "h1", text: "Ideas"
+    assert_selector "h1", text: "Coment"
   end
 
-  test "should create idea" do
+  test "should create coment" do
     visit ideas_url
     click_on "New idea"
 
     fill_in "Description", with: @idea.description
     fill_in "Name", with: @idea.name
     fill_in "Picture", with: @idea.picture
-    click_on "Create Idea"
+    click_on "Create Comment"
 
     assert_text "Idea was successfully created"
     click_on "Back"

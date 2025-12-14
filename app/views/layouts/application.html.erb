@@ -30,7 +30,9 @@
             <li class="nav-item">
               <a class="nav-link <%= 'active' if current_page?(controller: 'pages', action: 'map') %>" href="/pages/map">Map</a>
             </li>
-
+            <li class="nav-item">
+              <a class="nav-link <%= 'active' if current_page?(controller: 'ideas') %>" href="/ideas">Comment</a> 
+            </li>
             <li class="nav-item">
               <a class="nav-link <%= 'active' if current_page?(controller: 'pages', action: 'about') %>" href="/pages/about">About</a>
             </li>
