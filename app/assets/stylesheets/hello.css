@@ -43,3 +43,36 @@ code {
 .small {
   font-size: 0.75rem;
 }
+
+/* About page styles */
+.about-page {
+  padding: 2rem 1rem;
+  max-width: 760px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+.about-page .intro p {
+  margin: 0 0 1rem 0;
+}
+
+.about-page .btn {
+  display: inline-block;
+  background-color: #198754; /* Bootstrap btn-success */
+  color: #ffffff;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 120ms ease, transform 120ms ease;
+}
+
+.about-page .btn:hover,
+.about-page .btn:focus {
+  background-color: #157347; /* darker on hover */
+  transform: translateY(-1px);
+}
+
+.about-page .what-it-does ul {
+  margin: 0.5rem 0 1rem 1.2rem;
+}
