@@ -1,11 +1,61 @@
-<h1>Map</h1>
-<form action="/pages/map" method="get">
-  <input type="text" name="q" placeholder="名称または住所を入力してください">
-  <button type="submit">地図を表示</button>
-</form>
+<style>
+  .map-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  .search-form {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+  }
+  .search-form input {
+    flex: 1;
+    max-width: 400px;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  .search-form button {
+    padding: 0.5rem 1rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  .search-form button:hover {
+    background-color: #0056b3;
+  }
+  .map-iframe {
+    width: 100%;
+    height: 450px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  }
+  @media (max-width: 600px) {
+    .search-form {
+      flex-direction: column;
+      align-items: center;
+    }
+    .search-form input {
+      max-width: 100%;
+    }
+  }
+</style>
 
-<% if params[:q].present? %>
-  <iframe src="https://maps.google.com/maps?q=<%= URI.encode_www_form_component(params[:q]) %>&output=embed" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-<% else %>
-  <p>名称または住所を入力して地図を表示してください。</p>
-<% end %>
+<h1>Map</h1>
+<div class="map-container">
+  <form action="/pages/map" method="get" class="search-form">
+    <input type="text" name="q" placeholder="名称または住所を入力(Enter name or address)">
+    <button type="submit">地図を表示</button>
+  </form>
+
+  <% if params[:q].present? %>
+    <iframe src="https://maps.google.com/maps?q=<%= URI.encode_www_form_component(params[:q]) %>&output=embed" class="map-iframe" allowfullscreen="" loading="lazy"></iframe>
+  <% else %>
+    <iframe src="https://maps.google.com/maps?q=松江市&output=embed" class="map-iframe" allowfullscreen="" loading="lazy"></iframe>
+  <% end %>
+</div>
