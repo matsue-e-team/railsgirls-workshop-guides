@@ -6,5 +6,6 @@ Rails.application.routes.draw do
   resources :ideas do
     resources :comments
   end
+  post 'likes/toggle', to: 'likes#toggle'
   # root "hello#index"
 end

@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_12_01_080328) do
+ActiveRecord::Schema[7.1].define(version: 2025_12_14_013808) do
+  create_table "attractions", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.string "image_url"
+    t.string "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "comments", force: :cascade do |t|
     t.string "user_name"
     t.text "body"
@@ -28,5 +37,14 @@ ActiveRecord::Schema[7.1].define(version: 2025_12_01_080328) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "likes", force: :cascade do |t|
+    t.integer "attraction_id", null: false
+    t.string "session_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["attraction_id"], name: "index_likes_on_attraction_id"
+  end
+
   add_foreign_key "comments", "ideas"
+  add_foreign_key "likes", "attractions"
 end
